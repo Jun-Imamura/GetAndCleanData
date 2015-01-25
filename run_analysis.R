@@ -19,7 +19,7 @@ output <- function() {
     names(retVal) <- gsub("-","",names(retVal),fixed=TRUE)
     names(retVal) <- sub("()","",names(retVal),fixed=TRUE)
     data_summary <- retVal %>% group_by(activities,subject) %>% summarise_each(funs(mean), tBodyAccmeanX:fBodyBodyGyroJerkMagstd)
-    write.table(data.summary, "output.txt", row.name=F, append=F)
+    write.table(data_summary, "output.txt", row.name=F, append=F)
 }
     
     
